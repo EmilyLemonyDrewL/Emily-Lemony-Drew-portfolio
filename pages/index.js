@@ -51,7 +51,6 @@ function Home() {
             alt="About Image"
             width={250}
             height={218}
-            style={{ borderRadius: '10px', marginBottom: '15px' }}
           />
           <p>Skills: SQL, Python, Django, React, Next.js, Javacript, HTML & CSS, Rest APIs, and more...</p>
         </div>
@@ -140,10 +139,10 @@ function Home() {
 
       <div
         className="type-2 all-main"
-        onClick={() => { window.location.href = '/resume.pdf'; }} // Fix: Wrapped in {}
+        onClick={() => { window.location.href = '/EmilyDrewL-Resume.pdf'; }} // Fix: Wrapped in {}
         onKeyDown={(e) => {
           if (e.key === 'Enter' || e.key === ' ') {
-            window.location.href = '/resume.pdf';
+            window.location.href = '/EmilyDrewL-Resume.pdf';
           }
         }}
         role="button"
@@ -158,10 +157,10 @@ function Home() {
 
       <div
         className="type-1 all-main"
-        onClick={() => window.open('https://mail.google.com/mail/?view=cm&fs=1&to=lemonywebdev@gmail.com&su=via:Portfolio%20Hello!&body=Hi%20Emilyhttps://www.instagram.com/lemonywebdev/?hl=en', '_blank')}
+        onClick={() => window.open('https://mail.google.com/mail/?view=cm&fs=1&to=lemonywebdev@gmail.com&su=via:%20Portfolio%20Website&body=Hi%20Emily,', '_blank')}
         onKeyDown={(e) => {
           if (e.key === 'Enter' || e.key === ' ') {
-            window.open('https://mail.google.com/mail/?view=cm&fs=1&to=lemonywebdev@gmail.com&su=via:Portfolio%20Hello!&body=Hi%20Emily', '_blank');
+            window.open('https://mail.google.com/mail/?view=cm&fs=1&to=lemonywebdev@gmail.com&su=via:%20Portfolio%20Website&body=Hi%20Emily,', '_blank');
           }
         }}
         role="button"

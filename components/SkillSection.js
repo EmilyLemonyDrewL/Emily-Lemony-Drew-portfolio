@@ -2,16 +2,35 @@ import React from 'react';
 import Image from 'next/image';
 
 function Skills() {
+  const skills = [
+    { name: 'SQL', logo: '/logos/logosql.png' },
+    { name: 'Python', logo: '/logos/logopython.png' },
+    { name: 'Django', logo: '/logos/logodjango.png' },
+    { name: 'JavaScript', logo: '/logos/logojavascript.png' },
+    { name: 'HTML & CSS', logo: '/logos/logohtml.png' },
+    { name: 'Firebase', logo: '/logos/logofirebase.png' },
+    { name: 'Postman', logo: '/logos/logofirebase2.png' },
+  ];
+
   return (
-    <div>
-      <Image
-        className="skill-img"
-        src="/LemonyBrewSkills.png"
-        alt="This section lists skills and certificates. Under skill it reads, react, pyhton, django, SQL, Git, GitHub, Firebase, JavaScript, HTML and CSS. Under certificates it reads Software Developer Certificate from Nashville Software School and API Fundamentals Student Expert Certificate from Postman."
-        width={1180}
-        height={290}
-        layout="intrinsic" // Use the image's intrinsic width and height
-      />
+    <div className="skills-container skill-set">
+      <div className="skill-section">
+        <h2>Skills</h2>
+        <ul className="skill-list">
+          {skills.map((skill) => (
+            <li key={skill.name} className="skill-thing">
+              <Image
+                src={skill.logo}
+                alt={`${skill.name} logo`}
+                width={20}
+                height={20}
+                className="skill-logo"
+              />
+              <span>{skill.name}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 }

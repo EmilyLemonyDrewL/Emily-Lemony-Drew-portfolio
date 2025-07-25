@@ -1,6 +1,13 @@
 import React from 'react';
 import Image from 'next/image';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import SparkleTrail from '../components/SparkleTrail';
+import AboutMe from '../components/AboutSection';
+import ContactMe from '../components/ContactMe';
+import Skills from '../components/SkillSection';
+import Certificates from '../components/Cert';
+import Footer from '../components/FootNote';
+import Projects from '../components/ProjectCard';
 
 function Home() {
   return (
@@ -8,133 +15,135 @@ function Home() {
       className="main-container"
       style={{
         display: 'flex',
-        flexDirection: 'column', // Stack items vertically
-        alignItems: 'center', // Center items horizontally
+        flexDirection: 'column',
+        alignItems: 'center',
         position: 'relative',
-        overflow: 'hidden', // Ensure overflow is hidden
-        padding: '20px 0', // Add vertical padding
+        overflow: 'hidden',
+        padding: '20px 0',
       }}
     >
-
-      {/* Sparkle Trail */}
-      <SparkleTrail />
-
-      {/* About Section with Two Columns */}
       <div
-        className="type-1 about-section all-main"
+        className="button-row section"
         style={{
-          marginTop: '50px',
-          marginBottom: '40px',
           display: 'flex',
           flexDirection: 'row',
           justifyContent: 'center',
           alignItems: 'center',
-          gap: '10px', // Space between columns
-          width: '55%',
-          maxWidth: '1000px', // Limit width
+          gap: '4px',
+          flexWrap: 'wrap',
+          marginBottom: '10px',
         }}
       >
-        {/* Left Column: Image and Paragraph */}
-        <div
-          className="about-left"
-          style={{
-            flex: 1,
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            textAlign: 'center',
-          }}
-        >
-          <h5>Hi, I&apos;m Emily <q>Lemony</q> Drew</h5>
+        <div>
           <Image
-            src="/portimage.png" // Replace with actual image path
-            alt="About Image"
-            width={250}
-            height={218}
+            className="neon-sign"
+            src="/neonsign.gif"
+            alt="A neon sign that reads Emily Lemony Drew"
+            width={260}
+            height={250}
           />
-          <p>Skills: SQL, Python, Django, React, Next.js, Javacript, HTML & CSS, Rest APIs, and more...</p>
         </div>
+        <div>
+          <Image
+            className="portrait"
+            src="/portfolioportrait.png"
+            alt="Photo of Lemony"
+            width={200}
+            height={190}
+          />
+        </div>
+      </div>
+      {/* Sparkle Trail */}
+      <SparkleTrail />
 
-        {/* Right Column: List */}
+      <div className="grad">
+        <h1>Nashville Software School Graduate</h1>
+      </div>
+
+      <AboutMe />
+
+      <hr className="rounded" />
+
+      <div
+        className="button-row section"
+        style={{
+          display: 'flex',
+          flexDirection: 'row',
+          justifyContent: 'center',
+          alignItems: 'center',
+          gap: '20px',
+          flexWrap: 'wrap',
+        }}
+      >
         <div
-          className="about-right"
+          className="type-2 all-main"
+          onClick={() => window.open('https://www.linkedin.com/in/lemony-web-dev', '_blank')}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              window.open('https://www.linkedin.com/in/lemony-web-dev', '_blank');
+            }
+          }}
+          role="button"
+          tabIndex={0}
           style={{
-            flex: 1,
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            textAlign: 'left',
+            marginTop: '4px',
+            marginBottom: '20px', // Adjust spacing between Header and Welcome
           }}
         >
-          <p className="about-me" style={{ maxWidth: '300px', fontSize: '16px' }}>
-            I am a September 2024 graduate of the part-time Web Development bootcamp at Nashville Software School. My ardor for art and design has been a contant presence throughout my life. In college, I learned to manage camera equipment within the film department. In recent times, I have served as a mock up artist for a compnany that designs paper goods, like gift bags and stationary. I am inherently detail-oriented, finding immense satisfaction is projects that demand precision and an accumulation of effort over time.
-          </p>
+          <Image
+            src="/linkedinicon.png"
+            alt="GitHub"
+            width={34}
+            height={34}
+          />
         </div>
-      </div>
 
-      <div
-        className="type-3 all-main"
-        onClick={() => window.open('https://github.com/EmilyLemonyDrewL', '_blank')}
-        onKeyDown={(e) => {
-          if (e.key === 'Enter' || e.key === ' ') {
-            window.open('https://github.com/EmilyLemonyDrewL', '_blank');
-          }
-        }}
-        role="button"
-        tabIndex={0} // Allows keyboard navigation
-        style={{
-          marginTop: '10px',
-          marginBottom: '40px',
-          cursor: 'pointer',
-        }}
-      >
-        <h1>GITHUB</h1>
-      </div>
+        <div
+          className="type-3 all-main"
+          onClick={() => window.open('https://github.com/EmilyLemonyDrewL', '_blank')}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              window.open('https://github.com/EmilyLemonyDrewL', '_blank');
+            }
+          }}
+          role="button"
+          tabIndex={0} // Allows keyboard navigation
+          style={{
+            marginTop: '4px',
+            marginBottom: '20px',
+            cursor: 'pointer',
+          }}
+        >
+          <Image
+            src="/githubicon.png"
+            alt="GitHub"
+            width={34}
+            height={34}
+          />
+        </div>
 
-      <div
-        className="type-2 all-main"
-        onClick={() => window.open('https://www.linkedin.com/in/lemony-web-dev', '_blank')}
-        onKeyDown={(e) => {
-          if (e.key === 'Enter' || e.key === ' ') {
-            window.open('https://www.linkedin.com/in/lemony-web-dev', '_blank');
-          }
-        }}
-        role="button"
-        tabIndex={0}
-        style={{
-          marginTop: '10px',
-          marginBottom: '40px', // Adjust spacing between Header and Welcome
-        }}
-      >
-        <h1>LINKEDIN</h1>
-      </div>
-
-      <div
-        className="type-1 all-main"
-        onClick={() => window.open('https://www.instagram.com/lemonywebdev/?hl=en', '_blank')}
-        onKeyDown={(e) => {
-          if (e.key === 'Enter' || e.key === ' ') {
-            window.open('https://www.instagram.com/lemonywebdev/?hl=en', '_blank');
-          }
-        }}
-        role="button"
-        tabIndex={0}
-        style={{
-          marginTop: '10px',
-          marginBottom: '40px', // Adjust spacing between Header and Welcome
-        }}
-      >
-        <h1>INSTAGRAM</h1>
-      </div>
-
-      <div
-        className="type-3 all-main"
-        style={{
-          marginTop: '10px',
-          marginBottom: '40px', // Adjust spacing between Header and Welcome
-        }}
-      >
-        <h1>PROJECTS</h1>
+        <div
+          className="type-1 all-main"
+          onClick={() => window.open('https://www.instagram.com/lemonywebdev/?hl=en', '_blank')}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              window.open('https://www.instagram.com/lemonywebdev/?hl=en', '_blank');
+            }
+          }}
+          role="button"
+          tabIndex={0}
+          style={{
+            marginTop: '4px',
+            marginBottom: '20px', // Adjust spacing between Header and Welcome
+          }}
+        >
+          <Image
+            src="/instaicon.png"
+            alt="GitHub"
+            width={34}
+            height={34}
+          />
+        </div>
       </div>
 
       <div
@@ -148,30 +157,30 @@ function Home() {
         role="button"
         tabIndex={0}
         style={{
-          marginTop: '10px',
-          marginBottom: '40px', // Adjust spacing between Header and Welcome
+          marginTop: '0px',
+          marginBottom: '0px', // Adjust spacing between Header and Welcome
         }}
       >
-        <h1>DOWNLOAD MY RESUME</h1>
+        <h2>DOWNLOAD MY RESUME</h2>
       </div>
+      <div />
 
-      <div
-        className="type-1 all-main"
-        onClick={() => window.open('https://mail.google.com/mail/?view=cm&fs=1&to=lemonywebdev@gmail.com&su=via:%20Portfolio%20Website&body=Hi%20Emily,', '_blank')}
-        onKeyDown={(e) => {
-          if (e.key === 'Enter' || e.key === ' ') {
-            window.open('https://mail.google.com/mail/?view=cm&fs=1&to=lemonywebdev@gmail.com&su=via:%20Portfolio%20Website&body=Hi%20Emily,', '_blank');
-          }
-        }}
-        role="button"
-        tabIndex={0}
-        style={{
-          marginTop: '10px',
-          marginBottom: '40px', // Adjust spacing between Header and Welcome
-        }}
-      >
-        <h1>EMAIL ME</h1>
-      </div>
+      <div className="divider" />
+
+      <Skills />
+
+      <Certificates />
+
+      <div className="divider-2" />
+
+      <h2>Projects</h2>
+
+      <Projects />
+
+      <ContactMe />
+
+      <Footer />
+
     </div>
   );
 }
